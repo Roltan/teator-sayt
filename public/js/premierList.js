@@ -42,3 +42,7 @@ function PremierList2(obj){
     But.classList.add("im-in");
     TextList.style.display = 'block';
 }
+
+function buyTicket(obj){
+    var i = obj.name
+}
