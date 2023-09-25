@@ -24,7 +24,6 @@ function PremierList1(obg){
     var idT = 'premierText1'+i
     var But = document.getElementById(idB);
     var TextList = document.getElementById(idT);
-    console.log(idB)
 
     disablePr(i);
     But.classList.add("im-in");
@@ -43,6 +42,19 @@ function PremierList2(obj){
     TextList.style.display = 'block';
 }
 
-function buyTicket(obj){
+function buyTicket(obj, k){
     var i = obj.name
+    var idB = "buyPremier" + i
+    var idI = "infoPremier" + i
+    var buy = document.getElementById(idB);
+    var info = document.getElementById(idI);
+
+    if(k == 1){
+        buy.style.display = 'block'
+        info.style.display = 'none'
+    }
+    else{
+        buy.style.display = 'none'
+        info.style.display = 'block'
+    }
 }

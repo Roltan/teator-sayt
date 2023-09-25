@@ -47,7 +47,7 @@
                                     <div class="baner">
                                         <img src="{{url('/images/banerPremier.png')}}" alt="">
                                     </div>
-                                    <div class="infoPremier">
+                                    <div class="infoPremier" id="infoPremier{{$item -> id}}">
                                         <div class="headPremier">
                                             <div>
                                                 <span class="name G">{{$item -> name}}</span>
@@ -59,7 +59,7 @@
                                                 <span class="ageDown G">{{$item -> age}}</span>
                                                 <span class="coment">{{$item -> coment}}</span>
                                             </div>
-                                            <button class="btn-primary buy" id="buyTicket{{$item -> id}}" name="{{$item -> id}}" onclick="buyTicket(this)">купить билет</button>
+                                            <button class="btn-primary buy" id="buyTicket{{$item -> id}}" name="{{$item -> id}}" onclick="buyTicket(this, 1)">купить билет</button>
                                         </div>
                                         <div class="buttonPremier">
                                             <button class="im im-in" id="premierBut1{{$item -> id}}" name="{{$item -> id}}" onclick="PremierList1(this)">О спектакле</button>
@@ -90,7 +90,7 @@
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="buyPremier" id="modalText3{{$item -> id}}">
+                                    <div class="buyPremier" id="buyPremier{{$item -> id}}">
                                         <div class="headPremier">
                                             <span>покупка билета</span>
                                             <span>600 рублей</span>
@@ -183,7 +183,7 @@
                                             <span>Внимание! Выбранные вами билеты должны быть оплачены банковской картой в течение 30 минут. Обязательно распечатайте приобретенный вами электронный билет. Его необходимо предъявить при входе в театр. </span>
                                             <div>
                                                 <button class="btn-primary">Оплатить билет</button>
-                                                <button class="btn-secondary">Отменить</button>
+                                                <button class="btn-secondary" name="{{$item -> id}}" id="beck{{$item -> id}}" onclick="buyTicket(this, 2)">Отменить</button>
                                             </div>
                                         </div>
                                     </div>

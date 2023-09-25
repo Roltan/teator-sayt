@@ -11,7 +11,7 @@
 
 
 .infoPremier{
-    display: none;
+    /* display: none; */
 }
 
 
@@ -114,7 +114,7 @@
 
 
 .buyPremier{
-    /* display: none; */
+    display: none;
     margin-left: 50px;
     margin-right: 7px;
 }
