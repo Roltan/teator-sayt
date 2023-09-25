@@ -262,3 +262,16 @@
 .pay .modal-footer{
     justify-content: center !important;
 }
+
+
+
+
+
+
+
+.buyPremier .buyBody .rowMest .pic{
+    background-color: #FA434B !important;
+}
+.buyPremier .buyBody .rowMest .engaged{
+    background-color: #86837F !important;
+}

@@ -58,3 +58,30 @@ function buyTicket(obj, k){
         info.style.display = 'block'
     }
 }
+
+function picChair(obj){
+    if(!obj.classList.contains('engaged')){
+        var mesta = document.getElementsByClassName('pic')
+        for(let j = 0; j < mesta.length; j++){
+            mesta[j].classList.remove('pic')
+        }
+
+        obj.classList.add("pic")
+
+        var chair = obj.id
+        chair = String(chair)
+        var n = chair.length
+
+        var mesta = document.getElementsByClassName('chairText')
+        if(n == 2){
+            for(let j = 0; j < mesta.length; j++){
+                mesta[j].textContent = chair[0] + ' ряд ' + chair[1] + ' место'
+            }
+        }
+        if(n == 3){
+            for(let j = 0; j < mesta.length; j++){
+                mesta[j].textContent = chair[0] + ' ряд ' + chair[1] + chair[2] + ' место'
+            }
+        }
+    }
+}
