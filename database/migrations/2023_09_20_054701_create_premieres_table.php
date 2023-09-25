@@ -20,6 +20,12 @@ class CreatePremieresTable extends Migration
             $table->string('age');
             $table->string('name');
             $table->string('coment');
+
+            $table->string('baner');
+            $table->string('length');
+            $table->text('text');
+            $table->string('coleckiv');
+            $table->string('price');
         });
     }
 

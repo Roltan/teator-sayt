@@ -17,8 +17,8 @@ function disablePr(i){
     TextList2.style.display = 'none';
 }
 
-function PremierList1(obg){
-    var i = obg.name
+function PremierList1(obj){
+    var i = obj.name
 
     var idB = 'premierBut1'+i;
     var idT = 'premierText1'+i
