@@ -155,7 +155,7 @@
     grid-template-columns: 346px 400px;
     column-gap: 227px;
 }
-.buyPremier .buyBody .b{
+.b{
     color: #282828;
     font-family: Rubik;
     font-size: 18px;
@@ -236,4 +236,29 @@
     font-weight: 300;
     line-height: normal;
     letter-spacing: 0.2px;
+}
+
+
+
+
+
+.pay .modal-header{
+    padding-left: 114px;
+    /* margin-top: 5px; */
+
+    color: #282828;
+    font-family: Rubik;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.2px;
+}
+.pay .modal-body{
+    display: flex !important;
+    flex-direction: column;
+    align-items: start;
+}
+.pay .modal-footer{
+    justify-content: center !important;
 }

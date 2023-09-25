@@ -182,12 +182,38 @@
                                             <span class="time">14 Декабря, 19:30</span>
                                             <span>Внимание! Выбранные вами билеты должны быть оплачены банковской картой в течение 30 минут. Обязательно распечатайте приобретенный вами электронный билет. Его необходимо предъявить при входе в театр. </span>
                                             <div>
-                                                <button class="btn-primary">Оплатить билет</button>
+                                                <button class="btn-primary" data-bs-toggle="modal" data-bs-target="#pay{{$item -> id}}">Оплатить билет</button>
                                                 <button class="btn-secondary" name="{{$item -> id}}" id="beck{{$item -> id}}" onclick="buyTicket(this, 2)">Отменить</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="pay{{$item -> id}}" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+                        <div class="modal-content pay">
+                            <div class="modal-header">
+                                Оплата билета
+                            </div>
+                            <div class="modal-body">
+                                <span class="b">Мероприятие:</span>
+                                <span>Театр. Музыка. Любовь.</span>
+                                <span class="b">Длительность:</span>
+                                <span>2 часа 30 минут</span>
+                                <span class="b">Ограничение:</span>
+                                <span>12 +</span>
+                                <span class="b">Время:</span>
+                                <span>14 Декабря, 19:30</span>
+                                <span class="b">Место:</span>
+                                <span>1 ряд, 5 место</span>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn-primary">Оплатить билет</button>
+                                <button type="button" class="btn-secondary" data-bs-toggle="modal" data-bs-target="#{{$item -> id}}">Отмена</button>
                             </div>
                         </div>
                     </div>
