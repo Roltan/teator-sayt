@@ -1,0 +1,84 @@
+.head{
+    margin-top: 50px;
+    margin-left: 50px;
+
+    color: #282828;
+    font-family: Rubik;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.2px;
+}
+.main{
+    margin: 30px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+
+
+.list{
+    display: flex;
+    flex-direction: column;
+}
+.list .up{
+    margin-bottom: 10px;
+
+    color: #282828;
+    font-family: Rubik;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 18px; /* 128.571% */
+    letter-spacing: 0.2px;
+}
+.list .name{
+    margin-top: 10px;
+
+    color: #1E201F;
+    font-family: Rubik;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px; /* 150% */
+}
+
+
+
+
+.panel{
+    display: flex;
+    flex-direction: column;
+}
+.panel .up span{
+    color: #282828;
+    font-family: Rubik;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 18px; /* 128.571% */
+    letter-spacing: 0.2px;
+}
+.panel .up .r{
+    color: #FA434B;
+}
+
+.panel form{
+    margin-top: 30px;
+}
+.panel form label{
+    margin-top: 15px;
+
+    color: #282828;
+    font-family: Rubik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.2px;
+}
+.panel form input, .panel form textarea{
+    background: #EFEFEF;
+}

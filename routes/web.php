@@ -16,4 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'Controller@home');
 Route::get('/afisha', 'Controller@afisha');
 Route::get('/news', 'Controller@news');
+
 Route::post('/signup/check', 'Controller@signup');
+Route::get('/admin/afisha', 'Controller@Aafisha');
+Route::get('/admin/news', 'Controller@Anews');

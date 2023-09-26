@@ -36,12 +36,22 @@ class Controller extends BaseController
         
         foreach($table as $key){
             if($key->id == 1){
-                if($email == $key->email){
-                    if($password == $key->password){
+                if($key->email == $email){
+                    if($key->password == $password){
                         return view('admin');
                     }
                 }
             }
         }
+    }
+
+    public function Aafisha() {
+        $premiere = DB::table('premiere')->get();
+        return view('admin-Afisha', ['premiere' => $premiere]);
+    }
+
+    public function Anews() {
+        $news = DB::table('news')->get();
+        return view('admin-News', ['news' => $news]);
     }
 }

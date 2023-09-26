@@ -43,11 +43,11 @@
                         @csrf
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Логин</label>
-                            <input type="email" class="form-control email" id="exampleInputEmail1 email" aria-describedby="emailHelp">
+                            <input type="email" class="form-control email" id="email" name="email" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Пароль</label>
-                            <input type="password" class="form-control password" id="exampleInputPassword1 password">
+                            <input type="password" class="form-control password" id="password" name="password">
                         </div>
                         <div class="btn-cont">
                             <button type="submit" class="btn btn-primary">Войти</button>
