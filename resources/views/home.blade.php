@@ -24,7 +24,7 @@
             <span class="info-text">72 произведения</span>
             <span class="info-text">0+</span>
         </div>
-        <a href="" class="exit">узнать подробнее</a>
+        <a href="" class="exit" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="inModal1()">узнать подробнее</a>
     </div>
     
     <div class="premiere">
@@ -50,10 +50,10 @@
     </div>
 
     <div class="navigation">
-        <a href="">Правила поведения</a>
-        <a href="">Схема зала</a>
-        <a href="">История театра</a>
-        <a href="">Коллектив театра</a>
+        <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="inModal3()">Правила поведения</a>
+        <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="inModal4()">Схема зала</a>
+        <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="inModal1()">История театра</a>
+        <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="inModal2()">Коллектив театра</a>
     </div>
 
     <div class="news">

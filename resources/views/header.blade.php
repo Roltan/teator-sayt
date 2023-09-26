@@ -16,8 +16,8 @@
             <img src="{{url('/images/logo.png')}}" alt="">
             <a href="/">главная</a>
             <a href="/afisha">афиша</a>
-            <a href="">новости</a>
-            <button class="fromteator signup" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="in1()">о театре</button>
+            <a href="/news">новости</a>
+            <button class="fromteator signup" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="inModal1()">о театре</button>
         </div>
         <div class="login">
             <button class="signup" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -35,13 +35,6 @@
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content signup-modal">
                 <div class="modal-header">
-                    <div class="href">
-                        <img src="{{url('/images/logo.png')}}" alt="">
-                        <a href="/index.html">главная</a>
-                        <a href="">афиша</a>
-                        <a href="">новости</a>
-                        <a href="">о театре</a>
-                    </div>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <div class="modal-body">
@@ -71,13 +64,6 @@
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content signup-modal">
                 <div class="modal-header">
-                    <div class="href">
-                        <img src="{{url('/images/logo.png')}}" alt="">
-                        <a href="/">главная</a>
-                        <a href="/afisha">афиша</a>
-                        <a href="">новости</a>
-                        <a href="">о театре</a>
-                    </div>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <div class="modal-body">
@@ -203,6 +189,7 @@
                         </div>
                         <div class="modal-text-4" id="modalText4">
                             <img src="{{url('/images/zal.png')}}" alt="">
+                            <img src="{{url('/images/malzal.png')}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -219,21 +206,19 @@
                 <p class="text-body-secondary">© 2023</p>
             </div>
       
-            <div class="col mb-3">
-      
-            </div>
+            <div class="col mb-3"></div>
       
             <div class="col mb-3">
                 <h5>Навигация по сайту:</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Главная</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Афиша</a></li>
+                    <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-body-secondary">Главная</a></li>
+                    <li class="nav-item mb-2"><a href="/afisha" class="nav-link p-0 text-body-secondary">Афиша</a></li>
                     <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Новости</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">О театре</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Правила поведения</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Схема зала</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">История театра</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Каллектив театра</a></li>
+                    <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="inModal1()">о театре</a></li>
+                    <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="inModal3()">Правила поведения</a></li>
+                    <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="inModal4()">Схема зала</a></li>
+                    <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="inModal1()">История театра</a></li>
+                    <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="inModal2()">Каллектив театра</a></li>
                 </ul>
             </div>
       

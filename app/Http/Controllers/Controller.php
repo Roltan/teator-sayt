@@ -24,6 +24,11 @@ class Controller extends BaseController
         return view('afisha', ['premiere' => $premiere]);
     }
 
+    public function news() {
+        $news = DB::table('news')->get();
+        return view('news', ['news' => $news]);
+    }
+
     public function signup(Request $request) {
         $email = $request->input('email');
         $password = $request->input('password');

@@ -45,7 +45,7 @@
                             <div class="modal-body">
                                 <div class="fromPremier">
                                     <div class="baner">
-                                        <img src="{{url('/images/banerPremier.png')}}" alt="">
+                                        <img src="{{$item -> baner}}" alt="">
                                     </div>
                                     <div class="infoPremier" id="infoPremier{{$item -> id}}">
                                         <div class="headPremier">

@@ -200,6 +200,10 @@ header img{
     font-weight: 300;
     line-height: normal;
 }
+.modal-text .modal-text-4{
+    height: 500px;
+    overflow: scroll;
+}
 .modal-text .modal-text-4 img{
-    width: 520px;
+    width: 480px;
 }

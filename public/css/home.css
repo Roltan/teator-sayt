@@ -134,7 +134,15 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
-    
+}
+.news > .up > span:first-child{
+    color: #282828;
+    font-family: Rubik;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.2px;
 }
 .newStor{
     display: grid;
