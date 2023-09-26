@@ -213,7 +213,7 @@
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-body-secondary">Главная</a></li>
                     <li class="nav-item mb-2"><a href="/afisha" class="nav-link p-0 text-body-secondary">Афиша</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Новости</a></li>
+                    <li class="nav-item mb-2"><a href="/news" class="nav-link p-0 text-body-secondary">Новости</a></li>
                     <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="inModal1()">о театре</a></li>
                     <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="inModal3()">Правила поведения</a></li>
                     <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="inModal4()">Схема зала</a></li>

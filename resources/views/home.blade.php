@@ -59,7 +59,7 @@
     <div class="news">
         <div class="up">
             <span>Новости театра</span>
-            <span><a href="">Показать все <img src="{{url('images/arrow.png')}}" alt=""></a></span>
+            <span><a href="/news">Показать все <img src="{{url('images/arrow.png')}}" alt=""></a></span>
         </div>
         <div class="newStor">
             @foreach ($news as $item)

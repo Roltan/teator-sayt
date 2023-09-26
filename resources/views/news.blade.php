@@ -33,8 +33,8 @@
                                     <img src="{{url('/images/logo.png')}}" alt="">
                                     <a href="/">главная</a>
                                     <a href="/afisha">афиша</a>
-                                    <a href="">новости</a>
-                                    <a href="">о театре</a>
+                                    <a href="/news">новости</a>
+                                    <a class="nav-link p-0 text-body-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="inModal1()">о театре</a>
                                 </div>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                             </div>
