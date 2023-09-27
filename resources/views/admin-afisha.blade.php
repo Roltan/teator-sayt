@@ -1,0 +1,77 @@
+@extends('admin')
+
+@section('title')
+    adminPanel
+@endsection
+
+@section('mainContent')
+    <div class="head">
+        <span>Упровление новостями</span>
+    </div>
+    <div class="main">
+        <div class="list">
+            <span class="up">список мероприятий</span>
+            @foreach ($premiere as $item)
+                <span class="name">{{$item -> name}}</span>
+            @endforeach
+        </div>
+        <div class="panel">
+            <div class="up">
+                <span>Создание мероприятие</span>
+                <span class="r">/</span>
+                <span>Редактирование мероприятие</span>
+            </div>
+            <form method="POST" action="">
+                @csrf
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Загаловок:</label>
+                    <input type="text" class="form-control" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Подзагаловое:</label>
+                    <textarea class="form-control" name="text"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Описание:</label>
+                    <textarea class="form-control" name="coment"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Время:</label>
+                    <input type="text" class="form-control" name="time">    
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Длительность:</label>
+                    <input type="text" class="form-control" name="length">    
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Описание:</label>
+                    <input type="text" class="form-control" name="name">    
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Коллектив:</label>
+                    <textarea class="form-control" name="coleckiv"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Ограничение:</label>
+                    <input type="text" class="form-control" name="age">    
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Цена:</label>
+                    <input type="text" class="form-control" name="price">    
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Изображение карточки:</label>
+                    <input type="text" class="form-control" name="img">    
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Изображение баннера:</label>
+                    <input type="text" class="form-control" name="baner">    
+                </div>
+                <div class="btn-cont">
+                    <button type="submit" class="btn btn-primary">Добавить</button>
+                    <button type="button" class="btn-secondary" data-bs-dismiss="modal">Удалить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+@endsection

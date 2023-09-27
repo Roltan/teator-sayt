@@ -7,6 +7,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{asset('/css/mainstyle.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/admin.css')}}">
     @yield('links')
 </head>
 <body>
@@ -17,7 +18,7 @@
             <a href="/admin/news">Новости</a>
         </div>
         <div class="login">
-            <a href="/">выйти</a>
+            <a href="/">Выйти</a>
         </div>
     </header>
 

@@ -34,17 +34,19 @@
         </div>
         <div class="cards">
             @foreach ($premiere as $item)
-                <div class="card">
-                    <img src="{{$item -> img}}" alt="" class="bg">
-                    <div class="up">
-                        <span class="time">{{$item -> time}}</span>
-                        <span class="age">{{$item -> age}}</span>
+                @if ($item -> id <= 3)
+                    <div class="card">
+                        <img src="{{$item -> img}}" alt="" class="bg">
+                        <div class="up">
+                            <span class="time">{{$item -> time}}</span>
+                            <span class="age">{{$item -> age}}</span>
+                        </div>
+                        <div class="down">
+                            <span class="name">{{$item -> name}}</span> <br>
+                            <span class="coment">{{$item -> coment}}</span>
+                        </div>
                     </div>
-                    <div class="down">
-                        <span class="name">{{$item -> name}}</span> <br>
-                        <span class="coment">{{$item -> coment}}</span>
-                    </div>
-                </div>
+                @endif
             @endforeach
         </div>
     </div>
@@ -63,14 +65,16 @@
         </div>
         <div class="newStor">
             @foreach ($news as $item)
-                <div class="new">
-                    <img src="{{$item -> img}}">
-                    <div>
-                        <span class="name"><b>{{$item -> name}}</b></span>
-                        <span class="time">{{$item -> time}}</span>
-                        <span class="text">{{$item -> text}}</span>
+                @if ($item -> id <= 4)
+                    <div class="new">
+                        <img src="{{$item -> img}}">
+                        <div>
+                            <span class="name"><b>{{$item -> name}}</b></span>
+                            <span class="time">{{$item -> time}}</span>
+                            <span class="depiction">{{$item -> depiction}}</span>
+                        </div>
                     </div>
-                </div>
+                @endif
             @endforeach
         </div>
     </div>

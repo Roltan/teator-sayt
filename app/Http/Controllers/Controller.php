@@ -14,18 +14,18 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function home() {
-        $premiere = DB::table('premiere')->get();
-        $news = DB::table('news')->get();
+        $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+        $news = DB::select('SELECT * FROM news ORDER BY time DESC');
         return view('home', ['premiere' => $premiere, 'news' => $news]);
     }
 
     public function afisha() {
-        $premiere = DB::table('premiere')->get();
+        $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
         return view('afisha', ['premiere' => $premiere]);
     }
 
     public function news() {
-        $news = DB::table('news')->get();
+        $news = DB::select('SELECT * FROM news ORDER BY time DESC');
         return view('news', ['news' => $news]);
     }
 
@@ -46,12 +46,12 @@ class Controller extends BaseController
     }
 
     public function Aafisha() {
-        $premiere = DB::table('premiere')->get();
+        $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
         return view('admin-Afisha', ['premiere' => $premiere]);
     }
 
     public function Anews() {
-        $news = DB::table('news')->get();
+        $news = DB::select('SELECT * FROM news ORDER BY time DESC');
         return view('admin-News', ['news' => $news]);
     }
 }

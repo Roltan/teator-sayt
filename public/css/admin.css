@@ -1,3 +1,10 @@
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right:50px;
+}
+
 .head{
     margin-top: 50px;
     margin-left: 50px;

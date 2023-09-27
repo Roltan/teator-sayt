@@ -4,10 +4,6 @@
     adminPanel
 @endsection
 
-@section('links')
-    <link rel="stylesheet" href="{{asset('/css/admin.css')}}">
-@endsection
-
 @section('mainContent')
     <div class="head">
         <span>Упровление новостями</span>
@@ -29,15 +25,19 @@
                 @csrf
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Загаловок:</label>
-                    <input type="text" class="form-control" name="">
+                    <input type="text" class="form-control" name="name">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Описание</label>
-                    <textarea class="form-control" name=""></textarea>
+                    <textarea class="form-control" name="depiction"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Текст</label>
+                    <textarea class="form-control" name="text"></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Изображение:</label>
-                    <input type="text" class="form-control" name="">    
+                    <input type="text" class="form-control" name="img">    
                 </div>
                 <div class="btn-cont">
                     <button type="submit" class="btn btn-primary">Добавить</button>

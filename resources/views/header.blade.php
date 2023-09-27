@@ -14,17 +14,17 @@
     <header>
         <div class="href">
             <img src="{{url('/images/logo.png')}}" alt="">
-            <a href="/">главная</a>
-            <a href="/afisha">афиша</a>
-            <a href="/news">новости</a>
-            <button class="fromteator signup" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="inModal1()">о театре</button>
+            <a href="/">Главная</a>
+            <a href="/afisha">Афиша</a>
+            <a href="/news">Новости</a>
+            <button class="fromteator signup" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="inModal1()">О театре</button>
         </div>
         <div class="login">
             <button class="signup" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                войти
+                Войти
             </button>
             <button class="signup" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                регестрация
+                Регестрация
             </button>
         </div>
     </header>
