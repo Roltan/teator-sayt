@@ -8,6 +8,7 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{asset('/css/mainstyle.css')}}">
     <link rel="stylesheet" href="{{asset('/css/admin.css')}}">
+    <script defer src="/js/adminAdd.js"></script>
     @yield('links')
 </head>
 <body>

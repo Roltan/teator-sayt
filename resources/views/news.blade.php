@@ -21,7 +21,7 @@
                     <div>
                         <span class="name"><b>{{$item -> name}}</b></span>
                         <span class="time">{{$item -> time}}</span>
-                        <span class="text">{{$item -> text}}</span>
+                        <span class="text">{{$item -> depiction}}</span>
                     </div>
                 </div>
 
