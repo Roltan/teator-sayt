@@ -22,7 +22,7 @@
                 <span class="r">/</span>
                 <span>Редактирование новости</span>
             </div>
-            <form method="POST" action="" id="emptyForm" class="form" class="form">
+            <form method="POST" action="/admin/AddNews" id="emptyForm" class="form" class="form">
                 @csrf
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Загаловок:</label>
@@ -46,8 +46,9 @@
                 </div>
             </form>
             @foreach ($news as $item)
-                <form method="POST" action="" id="form{{$item -> id}}" class="form" style="display: none">
+                <form method="POST" action="/admin/СhangeNews" id="form{{$item -> id}}" class="form" style="display: none">
                     @csrf
+                    <input type="text" style="display: none" name="id" value="{{$item -> id}}">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Загаловок:</label>
                         <input type="text" class="form-control" name="name" value="{{$item -> name}}">
@@ -65,7 +66,7 @@
                         <input type="text" class="form-control" name="img" value="{{$item -> img}}">    
                     </div>
                     <div class="btn-cont">
-                        <button type="submit" class="btn btn-primary">Добавить</button>
+                        <button type="submit" class="btn btn-primary">Изменить</button>
                         <button type="button" class="btn-secondary" data-bs-dismiss="modal">Удалить</button>
                     </div>
                 </form>

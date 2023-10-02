@@ -6,7 +6,7 @@
 
 @section('mainContent')
     <div class="head">
-        <span>Упровление новостями</span>
+        <span>Упровление мероприятиями</span>
     </div>
     <div class="main">
         <div class="list">
@@ -22,7 +22,7 @@
                 <span class="r">/</span>
                 <span>Редактирование мероприятие</span>
             </div>
-            <form method="POST" action="" id="emptyForm" class="form">
+            <form method="POST" action="/admin/AddAfisha" id="emptyForm" class="form">
                 @csrf
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Загаловок:</label>
@@ -74,8 +74,9 @@
                 </div>
             </form>
             @foreach ($premiere as $item)
-                <form method="POST" action="" id="form{{$item -> id}}" class="form" style="display: none">
+                <form method="POST" action="/admin/СhangeAfisha" id="form{{$item -> id}}" class="form" style="display: none">
                     @csrf
+                    <input type="text" style="display: none" name="id" value="{{$item -> id}}">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Загаловок:</label>
                         <input type="text" class="form-control" name="name" value="{{$item -> name}}">
@@ -117,7 +118,7 @@
                         <input type="text" class="form-control" name="baner" value="{{$item -> baner}}">    
                     </div>
                     <div class="btn-cont">
-                        <button type="submit" class="btn btn-primary">Добавить</button>
+                        <button type="submit" class="btn btn-primary">Изменить</button>
                         <button type="button" class="btn-secondary" data-bs-dismiss="modal">Удалить</button>
                     </div>
                 </form>

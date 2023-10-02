@@ -54,4 +54,52 @@ class Controller extends BaseController
         $news = DB::select('SELECT * FROM news ORDER BY time DESC');
         return view('admin-News', ['news' => $news]);
     }
+
+    public function СhangeAfisha(Request $request){
+        $id = $request->input('id');
+        $img = $request->input('img');
+        $time = $request->input('time');
+        $age = $request->input('age');
+        $name = $request->input('name');
+        $coment = $request->input('coment');
+        $baner = $request->input('baner');
+        $length = $request->input('length');
+        $text = $request->input('text');
+        $colecktiv = $request->input('colecktiv');
+        $price = $request->input('price');
+
+        DB::select("UPDATE premiere SET `img`='$img',
+                                        `time`='$time',
+                                        `age`='$age',
+                                        `name`='$name',
+                                        `coment`='$coment',
+                                        `baner`='$baner',
+                                        `length`='$length',
+                                        `text`='$text',
+                                        `coleckiv`='$colecktiv',
+                                        `price`='$price' 
+                                        WHERE id=$id");
+
+        $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+        return view('admin-Afisha', ['premiere' => $premiere]);
+    }
+
+    public function СhangeNews(Request $request){
+        $id = $request->input('id');
+        $img = $request->input('img');
+        $name = $request->input('name');
+        $time = $request->input('time');
+        $depiction = $request->input('depiction');
+        $text = $request->input('text');
+
+        DB::select("UPDATE news SET `img`='$img',
+                                    `name`='$name',
+                                    `time`='$time',
+                                    `depiction`='$depiction',
+                                    `text`='$text'
+                                    WHERE id=$id");
+
+        $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+        return view('admin-News', ['news' => $news]);
+    }
 }

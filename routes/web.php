@@ -20,3 +20,8 @@ Route::get('/news', 'Controller@news');
 Route::post('/signup/check', 'Controller@signup');
 Route::get('/admin/afisha', 'Controller@Aafisha');
 Route::get('/admin/news', 'Controller@Anews');
+
+Route::post('/admin/СhangeNews','Controller@СhangeNews');
+Route::post('/admin/СhangeAfisha','Controller@СhangeAfisha');
+Route::post('/admin/AddNews','Controller@AddNews');
+Route::post('/admin/AddAfisha','Controller@AddAfisha');
