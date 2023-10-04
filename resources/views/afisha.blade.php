@@ -84,82 +84,47 @@
                                                 <span class="b">Схема зала</span>
                                                 <div class="rowMest">
                                                     <span>1</span>
-                                                    <button id="11" class="engaged" onclick="picChair(this)"></button>
-                                                    <button id="12" onclick="picChair(this)"></button>
-                                                    <button id="13" onclick="picChair(this)"></button>
-                                                    <button id="14" onclick="picChair(this)"></button>
-                                                    <button id="15" onclick="picChair(this)"></button>
-                                                    <button id="16" onclick="picChair(this)"></button>
-                                                    <button id="17" onclick="picChair(this)"></button>
-                                                    <button id="18" onclick="picChair(this)"></button>
-                                                    <button id="19" onclick="picChair(this)"></button>
-                                                    <button id="110" onclick="picChair(this)"></button>
+                                                    @foreach ($halls as $mesta)
+                                                        @if ($mesta->hallID == $item->id)
+                                                            @if ($mesta->row1 != 'none')
+                                                                <button id="{{$mesta->hallID}}{{$mesta->column}}" class="{{$mesta->row1}}" onclick="picChair(this)"></button>
+                                                            @endif
+                                                        @endif
+                                                    @endforeach
                                                 </div>
                                                 <div class="rowMest">
                                                     <span>2</span>
-                                                    <button id="21" onclick="picChair(this)"></button>
-                                                    <button id="22" onclick="picChair(this)"></button>
-                                                    <button id="23" onclick="picChair(this)"></button>
-                                                    <button id="24" onclick="picChair(this)"></button>
-                                                    <button id="25" onclick="picChair(this)"></button>
-                                                    <button id="26" onclick="picChair(this)"></button>
-                                                    <button id="27" onclick="picChair(this)"></button>
-                                                    <button id="28" onclick="picChair(this)"></button>
-                                                    <button id="29" onclick="picChair(this)"></button>
-                                                    <button id="210" onclick="picChair(this)"></button>
-                                                    <button id="211" onclick="picChair(this)"></button>
-                                                    <button id="212" onclick="picChair(this)"></button>
+                                                    @foreach ($halls as $mesta)
+                                                        @if ($mesta->hallID == $item->id)
+                                                            @if ($mesta->row2 != 'none')
+                                                                <button id="{{$mesta->hallID}}{{$mesta->column}}" class="{{$mesta->row2}}" onclick="picChair(this)"></button>
+                                                            @endif
+                                                        @endif
+                                                    @endforeach
                                                 </div>
                                                 <div class="rowMest">
                                                     <span>3</span>
-                                                    <button id="31" onclick="picChair(this)"></button>
-                                                    <button id="32" onclick="picChair(this)"></button>
-                                                    <button id="33" onclick="picChair(this)"></button>
-                                                    <button id="34" onclick="picChair(this)"></button>
-                                                    <button id="35" onclick="picChair(this)"></button>
-                                                    <button id="36" class="engaged" onclick="picChair(this)"></button>
-                                                    <button id="37" class="engaged" onclick="picChair(this)"></button>
-                                                    <button id="38" class="engaged" onclick="picChair(this)"></button>
-                                                    <button id="39" class="engaged" onclick="picChair(this)"></button>
-                                                    <button id="310" onclick="picChair(this)"></button>
-                                                    <button id="311" onclick="picChair(this)"></button>
-                                                    <button id="312" onclick="picChair(this)"></button>
-                                                    <button id="313" onclick="picChair(this)"></button>
-                                                    <button id="314" onclick="picChair(this)"></button>
+                                                    @foreach ($halls as $mesta)
+                                                        @if ($mesta->hallID == $item->id)
+                                                            <button id="{{$mesta->hallID}}{{$mesta->column}}" class="{{$mesta->row3}}" onclick="picChair(this)"></button>
+                                                        @endif
+                                                    @endforeach
                                                 </div>
                                                 <div class="rowMest">
                                                     <span>4</span>
-                                                    <button id="41" onclick="picChair(this)"></button>
-                                                    <button id="42" onclick="picChair(this)"></button>
-                                                    <button id="43" onclick="picChair(this)"></button>
-                                                    <button id="44" onclick="picChair(this)"></button>
-                                                    <button id="45" onclick="picChair(this)"></button>
-                                                    <button id="46" onclick="picChair(this)"></button>
-                                                    <button id="47" onclick="picChair(this)"></button>
-                                                    <button id="48" onclick="picChair(this)"></button>
-                                                    <button id="49" onclick="picChair(this)"></button>
-                                                    <button id="410" onclick="picChair(this)"></button>
-                                                    <button id="411" onclick="picChair(this)"></button>
-                                                    <button id="412" onclick="picChair(this)"></button>
-                                                    <button id="413" onclick="picChair(this)"></button>
-                                                    <button id="414" onclick="picChair(this)"></button>
+                                                    @foreach ($halls as $mesta)
+                                                        @if ($mesta->hallID == $item->id)
+                                                            <button id="{{$mesta->hallID}}{{$mesta->column}}" class="{{$mesta->row4}}" onclick="picChair(this)"></button>
+                                                        @endif
+                                                    @endforeach
                                                 </div>
                                                 <div class="rowMest">
                                                     <span>5</span>
-                                                    <button id="51" onclick="picChair(this)"></button>
-                                                    <button id="52" onclick="picChair(this)"></button>
-                                                    <button id="53" onclick="picChair(this)"></button>
-                                                    <button id="54" onclick="picChair(this)"></button>
-                                                    <button id="55" onclick="picChair(this)"></button>
-                                                    <button id="56" onclick="picChair(this)"></button>
-                                                    <button id="57" onclick="picChair(this)"></button>
-                                                    <button id="58" onclick="picChair(this)"></button>
-                                                    <button id="59" onclick="picChair(this)"></button>
-                                                    <button id="510" onclick="picChair(this)"></button>
-                                                    <button id="511" onclick="picChair(this)"></button>
-                                                    <button id="512" onclick="picChair(this)"></button>
-                                                    <button id="513" onclick="picChair(this)"></button>
-                                                    <button id="514" onclick="picChair(this)"></button>
+                                                    @foreach ($halls as $mesta)
+                                                        @if ($mesta->hallID == $item->id)
+                                                            <button id="{{$mesta->hallID}}{{$mesta->column}}" class="{{$mesta->row5}}" onclick="picChair(this)"></button>
+                                                        @endif
+                                                    @endforeach
                                                 </div>
                                             </div>
                                             <span class="b">Выберите дату показа премьеры</span>

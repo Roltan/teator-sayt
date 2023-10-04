@@ -21,7 +21,8 @@ class Controller extends BaseController
 
     public function afisha() {
         $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
-        return view('afisha', ['premiere' => $premiere]);
+        $halls = DB::select("SELECT * FROM halls");
+        return view('afisha', ['premiere' => $premiere, 'halls' => $halls]);
     }
 
     public function news() {
@@ -167,8 +168,28 @@ class Controller extends BaseController
         $colecktiv = $request->input('colecktiv');
         $price = $request->input('price');
 
-        DB::select("INSERT INTO `premiere`(`id`, `img`, `time`, `age`, `name`, `coment`, `baner`, `length`, `text`, `coleckiv`, `price`) VALUES 
-        ('$id','$img','$time','$age','$name','$coment','$baner','$length','$text','$colecktiv','$price')");
+        // DB::select("INSERT INTO `premiere`(`id`, `img`, `time`, `age`, `name`, `coment`, `baner`, `length`, `text`, `coleckiv`, `price`) VALUES 
+        // ('$id','$img','$time','$age','$name','$coment','$baner','$length','$text','$colecktiv','$price')");
+
+        
+        $k = 0;
+        for($j = 1; $j <= 3; $j++){
+            for($i = 1; $i <= 10; $i++){
+                $k++;
+                DB::select("INSERT INTO `halls`(`id`, `hallID`, `column`, `row1`, `row2`, `row3`, `row4`, `row5`) VALUES 
+                    ('$k','$j','$i','free','free','free','free','free')");
+            }
+            for($i = 11; $i <= 12; $i++){
+                $k++;
+                DB::select("INSERT INTO `halls`(`id`, `hallID`, `column`, `row1`, `row2`, `row3`, `row4`, `row5`) VALUES 
+                    ('$k','$j','$i','none','free','free','free','free')");
+            }
+            for($i = 13; $i <= 14; $i++){
+                $k++;
+                DB::select("INSERT INTO `halls`(`id`, `hallID`, `column`, `row1`, `row2`, `row3`, `row4`, `row5`) VALUES 
+                    ('$k','$j','$i','none','none','free','free','free')");
+            }
+        }   
 
         $premiere = DB::select('SELECT * FROM premiere');
         return view('admin-Afisha', ['premiere' => $premiere]);
