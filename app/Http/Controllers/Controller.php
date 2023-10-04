@@ -46,16 +46,115 @@ class Controller extends BaseController
     }
 
     public function Aafisha() {
-        $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+        $premiere = DB::select('SELECT * FROM premiere');
         return view('admin-Afisha', ['premiere' => $premiere]);
     }
 
     public function Anews() {
-        $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+        $news = DB::select('SELECT * FROM news');
         return view('admin-News', ['news' => $news]);
     }
 
     public function СhangeAfisha(Request $request){
+        $id = $request->input('id');
+        switch(request('key')) {
+            case 'add':
+                $img = $request->input('img');
+                $time = $request->input('time');
+                $age = $request->input('age');
+                $name = $request->input('name');
+                $coment = $request->input('coment');
+                $baner = $request->input('baner');
+                $length = $request->input('length');
+                $text = $request->input('text');
+                $colecktiv = $request->input('colecktiv');
+                $price = $request->input('price');
+
+                DB::select("UPDATE premiere SET `img`='$img',
+                                                `time`='$time',
+                                                `age`='$age',
+                                                `name`='$name',
+                                                `coment`='$coment',
+                                                `baner`='$baner',
+                                                `length`='$length',
+                                                `text`='$text',
+                                                `coleckiv`='$colecktiv',
+                                                `price`='$price' 
+                                                WHERE id=$id");
+            break;
+            case 'del':
+                DB::delete("DELETE FROM premiere WHERE id=$id");
+            
+                while (true) {
+                    $idS = $id;
+                    $id++;
+                    if(DB::table('premiere')->where('id',$id)->exists()){
+                        DB::select("UPDATE premiere SET `id`='$idS' WHERE id=$id");
+                    }
+                    else{
+                        break;
+                    }
+                }
+            break;
+        }
+
+        $premiere = DB::select('SELECT * FROM premiere');
+        return view('admin-Afisha', ['premiere' => $premiere]);
+    }
+
+    public function СhangeNews(Request $request){
+        $id = $request->input('id');
+        switch(request('key')) {
+            case 'add':
+                $img = $request->input('img');
+                $name = $request->input('name');
+                $time = $request->input('time');
+                $depiction = $request->input('depiction');
+                $text = $request->input('text');
+
+                DB::select("UPDATE news SET `img`='$img',
+                                            `name`='$name',
+                                            `time`='$time',
+                                            `depiction`='$depiction',
+                                            `text`='$text'
+                                            WHERE id=$id");
+            break;
+            case 'del':
+                DB::delete("DELETE FROM news WHERE id=$id");
+            
+                while (true) {
+                    $idS = $id;
+                    $id++;
+                    if(DB::table('news')->where('id',$id)->exists()){
+                        DB::select("UPDATE news SET `id`='$idS' WHERE id=$id");
+                    }
+                    else{
+                        break;
+                    }
+                }
+            break;
+        }
+
+        $news = DB::select('SELECT * FROM news');
+        return view('admin-News', ['news' => $news]);
+    }
+
+    public function AddNews(Request $request){
+        $id = $request->input('id');
+        $img = $request->input('img');
+        $name = $request->input('name');
+        $time = $request->input('time');
+        $depiction = $request->input('depiction');
+        $text = $request->input('text');
+
+        DB::select("INSERT INTO `news`(`id`, `img`, `name`, `time`, `depiction`, `text`) VALUES 
+        ('$id','$img','$name','$time','$depiction','$text')");
+
+        $news = DB::select('SELECT * FROM news');
+        return view('admin-News', ['news' => $news]);
+    }
+
+    public function AddAfisha(Request $request){
         $id = $request->input('id');
         $img = $request->input('img');
         $time = $request->input('time');
@@ -68,38 +167,10 @@ class Controller extends BaseController
         $colecktiv = $request->input('colecktiv');
         $price = $request->input('price');
 
-        DB::select("UPDATE premiere SET `img`='$img',
-                                        `time`='$time',
-                                        `age`='$age',
-                                        `name`='$name',
-                                        `coment`='$coment',
-                                        `baner`='$baner',
-                                        `length`='$length',
-                                        `text`='$text',
-                                        `coleckiv`='$colecktiv',
-                                        `price`='$price' 
-                                        WHERE id=$id");
+        DB::select("INSERT INTO `premiere`(`id`, `img`, `time`, `age`, `name`, `coment`, `baner`, `length`, `text`, `coleckiv`, `price`) VALUES 
+        ('$id','$img','$time','$age','$name','$coment','$baner','$length','$text','$colecktiv','$price')");
 
-        $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+        $premiere = DB::select('SELECT * FROM premiere');
         return view('admin-Afisha', ['premiere' => $premiere]);
-    }
-
-    public function СhangeNews(Request $request){
-        $id = $request->input('id');
-        $img = $request->input('img');
-        $name = $request->input('name');
-        $time = $request->input('time');
-        $depiction = $request->input('depiction');
-        $text = $request->input('text');
-
-        DB::select("UPDATE news SET `img`='$img',
-                                    `name`='$name',
-                                    `time`='$time',
-                                    `depiction`='$depiction',
-                                    `text`='$text'
-                                    WHERE id=$id");
-
-        $news = DB::select('SELECT * FROM news ORDER BY time DESC');
-        return view('admin-News', ['news' => $news]);
     }
 }
