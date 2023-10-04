@@ -17,7 +17,7 @@
         </div>
         <div class="cards">
             @foreach ($premiere as $item)
-                <button class="card" data-bs-toggle="modal" name="{{$item -> id}}" data-bs-target="#{{$item -> id}}" onclick="PremierList1(this)">
+                <div class="card" data-bs-toggle="modal" name="{{$item -> id}}" data-bs-target="#{{$item -> id}}" onclick="PremierList1(this)">
                     <img src="{{$item -> img}}" alt="" class="bg">
                     <div class="up">
                         <span class="time">{{$item -> time}}</span>
@@ -27,7 +27,7 @@
                         <span class="name">{{$item -> name}}</span> <br>
                         <span class="coment">{{$item -> coment}}</span>
                     </div>
-                </button>
+                </div>
 
                 <div class="modal fade" id="{{$item -> id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-fullscreen">
@@ -68,7 +68,7 @@
                                         <div class="modal-text-1" id="premierText1{{$item -> id}}">
                                             {{$item -> text}}
                                         </div>
-                                        <div class="modal-text-2" id="premierText2{{$item -> id}}">
+                                        <div class="modal-text-2" style="display: none" id="premierText2{{$item -> id}}">
                                             <span>
                                                 {{$item -> coleckiv}}
                                             </span>
