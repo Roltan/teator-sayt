@@ -38,9 +38,10 @@
 
 .premiere .cards{
     margin: 40px 50px 0 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    row-gap: 30px;
     border: none;
 }
 .premiere > .cards .bg{

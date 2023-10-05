@@ -99,10 +99,6 @@
                     <input type="text" class="form-control" name="length">    
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Описание:</label>
-                    <input type="text" class="form-control" name="name">    
-                </div>
-                <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Коллектив:</label>
                     <textarea class="form-control" name="coleckiv"></textarea>
                 </div>

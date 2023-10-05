@@ -28,7 +28,7 @@
                         <span class="coment">{{$item -> coment}}</span>
                     </div>
                 </div>
-
+                
                 <div class="modal fade" id="{{$item -> id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-fullscreen">
                         <div class="modal-content signup-modal">
