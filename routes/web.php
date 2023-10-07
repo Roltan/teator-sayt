@@ -18,6 +18,9 @@ Route::get('/afisha', 'Controller@afisha');
 Route::get('/news', 'Controller@news');
 
 Route::post('/signup/check', 'Controller@signup');
+Route::post('/reg', 'Controller@register');
+
+
 Route::get('/admin/afisha', 'Controller@Aafisha');
 Route::get('/admin/news', 'Controller@Anews');
 

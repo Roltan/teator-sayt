@@ -87,9 +87,12 @@ header img{
     align-items: center;
     flex-direction: column;
 }
-.signup-modal .modal-body input{
+.signup-modal .modal-body input:not(.form-check-input){
     min-width: 530px;
     background: #EFEFEF;
+}
+.signup-modal .modal-body .alert{
+    width: 530px;
 }
 
 

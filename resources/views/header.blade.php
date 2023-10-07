@@ -68,22 +68,38 @@
                 </div>
                 <div class="modal-body">
                     <h1>Зарегестрироватся</h1>
-                    <form method="POST" action="/signup/check">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <form method="POST" action="/reg">
                         @csrf
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Логин</label>
-                            <input type="email" name="email" class="form-control email" id="exampleInputEmail1 email" aria-describedby="emailHelp">
+                            <input type="email" name="email" class="form-control email" id="email">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Пароль</label>
-                            <input type="password" name="password" class="form-control password" id="exampleInputPassword1 password">
+                            <input type="password" name="password" class="form-control password" id="password">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Повторите пароль</label>
+                            <input type="password" name="password_confirmation" class="form-control password" id="password">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="check">
+                            <label class="form-check-label" for="exampleCheck1">Согласие на обработку персональных данных</label>
                         </div>
                         <div class="btn-cont">
                             <button type="submit" class="btn btn-primary">Продолжить</button>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
                         </div>
                     </form>
-                    <br><br><br><br><br><br><br><br><br>
                 </div>
             </div>
         </div>

@@ -46,6 +46,14 @@ class Controller extends BaseController
         }
     }
 
+    public function register(Request $request){
+        $request -> validate([
+            'email' => ['min:5','required'],
+            'password' => ['min:5','confirmed','required'],
+            'check' => ['accepted','required'],
+        ]);
+    }
+
     public function Aafisha() {
         $premiere = DB::select('SELECT * FROM premiere');
         return view('admin-Afisha', ['premiere' => $premiere]);
