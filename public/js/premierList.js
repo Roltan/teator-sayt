@@ -73,14 +73,20 @@ function picChair(obj){
         var n = chair.length
 
         var mesta = document.getElementsByClassName('chairText')
+        var row = document.getElementsByClassName('payOutRow')
+        var column = document.getElementsByClassName('payOutColumn')
         if(n == 2){
             for(let j = 0; j < mesta.length; j++){
                 mesta[j].textContent = chair[0] + ' ряд ' + chair[1] + ' место'
+                row[j].value = ''+chair[0]
+                column[j].value = ''+chair[1]
             }
         }
         if(n == 3){
             for(let j = 0; j < mesta.length; j++){
                 mesta[j].textContent = chair[0] + ' ряд ' + chair[1] + chair[2] + ' место'
+                row[j].value = ''+chair[0]
+                column[j].value = ''+chair[1] + chair[2]
             }
         }
     }

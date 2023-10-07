@@ -161,8 +161,13 @@
                                 <span class="chairText"></span>
                             </div>
                             <div class="modal-footer">
-                                <button class="btn-primary">Оплатить билет</button>
-                                <button type="button" class="btn-secondary" data-bs-toggle="modal" data-bs-target="#{{$item -> id}}">Отмена</button>
+                                <form action="/buyTicket" method="POST">
+                                    <input type="text" style="display: none" name="hallID" value="{{$item->id}}">
+                                    <input type="text" style="display: none" class="payOutRow" name="row">
+                                    <input type="text" style="display: none" class="payOutColumn" name="column">
+                                    <button type="submit" class="btn-primary">Оплатить билет</button>
+                                    <button type="button" class="btn-secondary" data-bs-toggle="modal" data-bs-target="#{{$item -> id}}">Отмена</button>
+                                </form>
                             </div>
                         </div>
                     </div>
