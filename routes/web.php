@@ -25,3 +25,5 @@ Route::post('/admin/СhangeNews','Controller@СhangeNews');
 Route::post('/admin/СhangeAfisha','Controller@СhangeAfisha');
 Route::post('/admin/AddNews','Controller@AddNews');
 Route::post('/admin/AddAfisha','Controller@AddAfisha');
+
+Route::post('/buyTicket','Controller@buyTicket');
