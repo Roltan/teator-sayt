@@ -87,7 +87,7 @@
                                                     @foreach ($halls as $mesta)
                                                         @if ($mesta->hallID == $item->id)
                                                             @if ($mesta->row1 != 'none')
-                                                                <button id="1{{$mesta->column}}" class="{{$mesta->row1}}" onclick="picChair(this)"></button>
+                                                                <button id="{{$mesta->hallID}}{{$mesta->column}}" class="{{$mesta->row1}}" onclick="picChair(this)"></button>
                                                             @endif
                                                         @endif
                                                     @endforeach
@@ -97,7 +97,7 @@
                                                     @foreach ($halls as $mesta)
                                                         @if ($mesta->hallID == $item->id)
                                                             @if ($mesta->row2 != 'none')
-                                                                <button id="2{{$mesta->column}}" class="{{$mesta->row2}}" onclick="picChair(this)"></button>
+                                                                <button id="{{$mesta->hallID}}{{$mesta->column}}" class="{{$mesta->row2}}" onclick="picChair(this)"></button>
                                                             @endif
                                                         @endif
                                                     @endforeach
@@ -106,7 +106,7 @@
                                                     <span>3</span>
                                                     @foreach ($halls as $mesta)
                                                         @if ($mesta->hallID == $item->id)
-                                                            <button id="3{{$mesta->column}}" class="{{$mesta->row3}}" onclick="picChair(this)"></button>
+                                                            <button id="{{$mesta->hallID}}{{$mesta->column}}" class="{{$mesta->row3}}" onclick="picChair(this)"></button>
                                                         @endif
                                                     @endforeach
                                                 </div>
@@ -114,7 +114,7 @@
                                                     <span>4</span>
                                                     @foreach ($halls as $mesta)
                                                         @if ($mesta->hallID == $item->id)
-                                                            <button id="4{{$mesta->column}}" class="{{$mesta->row4}}" onclick="picChair(this)"></button>
+                                                            <button id="{{$mesta->hallID}}{{$mesta->column}}" class="{{$mesta->row4}}" onclick="picChair(this)"></button>
                                                         @endif
                                                     @endforeach
                                                 </div>
@@ -122,7 +122,7 @@
                                                     <span>5</span>
                                                     @foreach ($halls as $mesta)
                                                         @if ($mesta->hallID == $item->id)
-                                                            <button id="5{{$mesta->column}}" class="{{$mesta->row5}}" onclick="picChair(this)"></button>
+                                                            <button id="{{$mesta->hallID}}{{$mesta->column}}" class="{{$mesta->row5}}" onclick="picChair(this)"></button>
                                                         @endif
                                                     @endforeach
                                                 </div>
@@ -162,7 +162,6 @@
                             </div>
                             <div class="modal-footer">
                                 <form action="/buyTicket" method="POST">
-                                    @csrf
                                     <input type="text" style="display: none" name="hallID" value="{{$item->id}}">
                                     <input type="text" style="display: none" class="payOutRow" name="row">
                                     <input type="text" style="display: none" class="payOutColumn" name="column">

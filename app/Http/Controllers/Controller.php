@@ -217,32 +217,4 @@ class Controller extends BaseController
         $premiere = DB::select('SELECT * FROM premiere');
         return view('admin-Afisha', ['premiere' => $premiere]);
     }
-
-    public function buyTicket(Request $request){
-        $hallID = $request->input('hallID');
-        $row = $request->input("row");
-        $col = $request->input("column");
-        
-        switch($row){
-            case 1:
-                DB::select("UPDATE `halls` SET `row1`='engaged' WHERE `hallID`='$hallID' AND `column`='$col'");
-            break;
-            case 2:
-                DB::select("UPDATE `halls` SET `row2`='engaged' WHERE `hallID`='$hallID' AND `column`='$col'");
-            break;
-            case 3:
-                DB::select("UPDATE `halls` SET `row3`='engaged' WHERE `hallID`='$hallID' AND `column`='$col'");
-            break;
-            case 4:
-                DB::select("UPDATE `halls` SET `row4`='engaged' WHERE `hallID`='$hallID' AND `column`='$col'");
-            break;
-            case 5:
-                DB::select("UPDATE `halls` SET `row5`='engaged' WHERE `hallID`='$hallID' AND `column`='$col'");
-            break;
-        }
-
-        $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
-        $halls = DB::select("SELECT * FROM halls");
-        return view('afisha', ['premiere' => $premiere, 'halls' => $halls]);
-    }
 }
