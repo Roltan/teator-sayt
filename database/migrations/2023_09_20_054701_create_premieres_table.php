@@ -19,7 +19,7 @@ class CreatePremieresTable extends Migration
             $table->string('time');
             $table->string('age');
             $table->string('name');
-            $table->string('coment');
+            $table->text('coment');
 
             $table->string('baner');
             $table->string('length');

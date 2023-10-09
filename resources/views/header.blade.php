@@ -42,11 +42,11 @@
                     <form method="POST" action="/signup/check">
                         @csrf
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Логин</label>
-                            <input type="email" class="form-control email" id="email" name="email" aria-describedby="emailHelp">
+                            <label class="form-label">Логин</label>
+                            <input type="text" class="form-control" id="text" name="name">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Пароль</label>
+                            <label class="form-label">Пароль</label>
                             <input type="password" class="form-control password" id="password" name="password">
                         </div>
                         <div class="btn-cont">
@@ -81,6 +81,10 @@
                         @csrf
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Логин</label>
+                            <input type="text" name="name" class="form-control" id="login">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Почта</label>
                             <input type="email" name="email" class="form-control email" id="email">
                         </div>
                         <div class="mb-3">
@@ -95,6 +99,7 @@
                             <input type="checkbox" class="form-check-input" id="exampleCheck1" name="check">
                             <label class="form-check-label" for="exampleCheck1">Согласие на обработку персональных данных</label>
                         </div>
+                        <br>
                         <div class="btn-cont">
                             <button type="submit" class="btn btn-primary">Продолжить</button>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>

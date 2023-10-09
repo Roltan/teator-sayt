@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class Controller extends BaseController
 {
@@ -31,27 +34,68 @@ class Controller extends BaseController
     }
 
     public function signup(Request $request) {
-        $email = $request->input('email');
+        $name = $request->input('name');
         $password = $request->input('password');
         $table = DB::table('signups')->get();
         
         foreach($table as $key){
             if($key->id == 1){
-                if($key->email == $email){
+                if($key->login == $name){
                     if($key->password == $password){
                         return view('admin');
                     }
                 }
             }
         }
+
+        $request -> validate([
+            'name' => ['min:5','required'],
+            'password' => ['min:5', 'required'],
+        ]);
+        if(Auth::attempt($request->only('name','password'))){
+            dd('1');
+            $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+            $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+            return view('home', ['premiere' => $premiere, 'news' => $news]);
+        }
+        else{
+            dd('0');
+            $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+            $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+            return view('home', ['premiere' => $premiere, 'news' => $news]);
+        }
     }
 
     public function register(Request $request){
         $request -> validate([
-            'email' => ['min:5','required'],
+            'name' => ['min:5','required'],
+            'email' => ['min:5','required','email','unique:users'],
             'password' => ['min:5','confirmed','required'],
             'check' => ['accepted','required'],
         ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
+        Auth::login($user);
+        $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+        $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+        return view('home');
+
+
+        
+        // $login = $request -> input('login');
+        // $email = $request -> input('email');
+        // $password = $request -> input('password');
+        // $buf = DB::select('SELECT id FROM signups ORDER BY id');
+        // foreach ($buf as $i){
+        //     $id = $i -> id + 1;
+        //     break;
+        // }
+        // DB::select("INSERT INTO `signups`(`id`, `login`, `email`, `password`) VALUES ('$id','$login','$email','$password')");
+        // DB::select("CREATE TABLE ")
     }
 
     public function Aafisha() {
