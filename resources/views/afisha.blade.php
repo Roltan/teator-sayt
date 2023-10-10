@@ -59,7 +59,9 @@
                                                 <span class="ageDown G">{{$item -> age}}</span>
                                                 <span class="coment">{{$item -> coment}}</span>
                                             </div>
-                                            <button class="btn-primary buy" id="buyTicket{{$item -> id}}" name="{{$item -> id}}" onclick="buyTicket(this, 1)">купить билет</button>
+                                            @auth
+                                                <button class="btn-primary buy" id="buyTicket{{$item -> id}}" name="{{$item -> id}}" onclick="buyTicket(this, 1)">купить билет</button>    
+                                            @endauth
                                         </div>
                                         <div class="buttonPremier">
                                             <button class="im im-in" id="premierBut1{{$item -> id}}" name="{{$item -> id}}" onclick="PremierList1(this)">О спектакле</button>

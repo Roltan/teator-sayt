@@ -20,12 +20,24 @@
             <button class="fromteator signup" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="inModal1()">О театре</button>
         </div>
         <div class="login">
-            <button class="signup" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Войти
-            </button>
-            <button class="signup" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                Регестрация
-            </button>
+            <?php use Illuminate\Support\Facades\Auth; ?>
+            @auth
+                <a class="signup" href="/LKab">
+                    Личный кабинет
+                </a>
+                <a class="signup" href="/logout">
+                    Выйти
+                </a>
+            @endauth
+            @unless (Auth::check())
+                <button class="signup" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Войти
+                </button>
+                <button class="signup" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                    Регестрация
+                </button>
+            @endunless
+            
         </div>
     </header>
 

@@ -19,6 +19,8 @@ Route::get('/news', 'Controller@news');
 
 Route::post('/signup/check', 'Controller@signup');
 Route::post('/reg', 'Controller@register');
+Route::get('/logout', 'Controller@logout');
+Route::get('/LKab', 'Controller@LKab');
 
 
 Route::get('/admin/afisha', 'Controller@Aafisha');

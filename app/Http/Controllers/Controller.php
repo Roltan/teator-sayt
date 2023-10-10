@@ -53,13 +53,11 @@ class Controller extends BaseController
             'password' => ['min:5', 'required'],
         ]);
         if(Auth::attempt($request->only('name','password'))){
-            dd('1');
             $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
             $news = DB::select('SELECT * FROM news ORDER BY time DESC');
             return view('home', ['premiere' => $premiere, 'news' => $news]);
         }
         else{
-            dd('0');
             $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
             $news = DB::select('SELECT * FROM news ORDER BY time DESC');
             return view('home', ['premiere' => $premiere, 'news' => $news]);
@@ -96,6 +94,18 @@ class Controller extends BaseController
         // }
         // DB::select("INSERT INTO `signups`(`id`, `login`, `email`, `password`) VALUES ('$id','$login','$email','$password')");
         // DB::select("CREATE TABLE ")
+    }
+
+    public function logout(){
+        Auth::logout();
+
+        $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+        $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+        return view('home', ['premiere' => $premiere, 'news' => $news]);
+    }
+
+    public function LKab(){
+        return view('LKab');
     }
 
     public function Aafisha() {
