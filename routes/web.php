@@ -25,6 +25,7 @@ Route::get('/LKab', 'Controller@LKab');
 
 Route::get('/admin/afisha', 'Controller@Aafisha');
 Route::get('/admin/news', 'Controller@Anews');
+Route::get('/admin/ticket','Controller@Aticket');
 
 Route::post('/admin/СhangeNews','Controller@СhangeNews');
 Route::post('/admin/СhangeAfisha','Controller@СhangeAfisha');

@@ -118,6 +118,57 @@ class Controller extends BaseController
         return view('admin-News', ['news' => $news]);
     }
 
+    public function Aticket(){
+        $halls = DB::select('SELECT * FROM halls');
+        $ID = 1;
+        $count = 0;
+        $arrCount = array();
+        $arrID = array();
+        foreach($halls as $item){
+            if($item->hallID == $ID){
+                if($item->row1 == 'engaged'){
+                    $count++;
+                }
+                if($item->row2 == 'engaged'){
+                    $count++;
+                }
+                if($item->row3 == 'engaged'){
+                    $count++;
+                }
+                if($item->row4 == 'engaged'){
+                    $count++;
+                }
+                if($item->row5 == 'engaged'){
+                    $count++;
+                }
+            }
+            else{
+                array_push($arrID,$ID);
+                array_push($arrCount,$count);
+                $count=0;
+                $ID++;
+
+                if($item->row1 == 'engaged'){
+                    $count++;
+                }
+                if($item->row2 == 'engaged'){
+                    $count++;
+                }
+                if($item->row3 == 'engaged'){
+                    $count++;
+                }
+                if($item->row4 == 'engaged'){
+                    $count++;
+                }
+                if($item->row5 == 'engaged'){
+                    $count++;
+                }
+            }
+        }
+        dd($arrID);
+        return view('admin-ticket');
+    }
+
     public function СhangeAfisha(Request $request){
         $id = $request->input('id');
         switch(request('key')) {

@@ -17,6 +17,7 @@
             <img src="{{url('/images/logo.png')}}" alt="">
             <a href="/admin/afisha">Афиша</a>
             <a href="/admin/news">Новости</a>
+            <a href="/admin/ticket">Проданно билетов</a>
         </div>
         <div class="login">
             <a href="/">Выйти</a>
