@@ -164,6 +164,7 @@
                             </div>
                             <div class="modal-footer">
                                 <form action="/buyTicket" method="POST">
+                                    @csrf
                                     <input type="text" style="display: none" name="hallID" value="{{$item->id}}">
                                     <input type="text" style="display: none" class="payOutRow" name="row">
                                     <input type="text" style="display: none" class="payOutColumn" name="column">

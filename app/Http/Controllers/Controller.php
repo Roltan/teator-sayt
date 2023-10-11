@@ -123,50 +123,31 @@ class Controller extends BaseController
         $ID = 1;
         $count = 0;
         $arrCount = array();
-        $arrID = array();
         foreach($halls as $item){
-            if($item->hallID == $ID){
-                if($item->row1 == 'engaged'){
-                    $count++;
-                }
-                if($item->row2 == 'engaged'){
-                    $count++;
-                }
-                if($item->row3 == 'engaged'){
-                    $count++;
-                }
-                if($item->row4 == 'engaged'){
-                    $count++;
-                }
-                if($item->row5 == 'engaged'){
-                    $count++;
-                }
+            if($item->row1 == 'engaged'){
+                $count++;
             }
-            else{
-                array_push($arrID,$ID);
-                array_push($arrCount,$count);
-                $count=0;
-                $ID++;
-
-                if($item->row1 == 'engaged'){
-                    $count++;
-                }
-                if($item->row2 == 'engaged'){
-                    $count++;
-                }
-                if($item->row3 == 'engaged'){
-                    $count++;
-                }
-                if($item->row4 == 'engaged'){
-                    $count++;
-                }
-                if($item->row5 == 'engaged'){
-                    $count++;
-                }
+            if($item->row2 == 'engaged'){
+                $count++;
             }
+            if($item->row3 == 'engaged'){
+                $count++;
+            }
+            if($item->row4 == 'engaged'){
+                $count++;
+            }
+            if($item->row5 == 'engaged'){
+                $count++;
+            }
+            if($ID == 14){
+                $arrCount[] = $count;
+                $ID = 0;
+                $count = 0;
+            }
+            $ID++;
         }
-        dd($arrID);
-        return view('admin-ticket');
+        $premiere = DB::select('SELECT * FROM premiere');
+        return view('admin-ticket', ['premiere' => $premiere, 'count' => $arrCount]);
     }
 
     public function СhangeAfisha(Request $request){
