@@ -44,27 +44,6 @@
                     </div> 
                 @endforeach
             @endif
-            
-            {{-- <div class="none-ticket">
-                <span>Вы ещё не покупали билеты</span>
-                <a href="/afisha" class="btn-primary">выбрать предстовлеие</a>
-            </div> --}}
-            {{-- <div class="ticket">
-                <img src="http://teator-sayt/images/banerPremier.png" alt="">
-                <div>
-                    <span>Театр. Музыка. Любовь.</span>
-                    <span>14 декабря, 19:30</span>
-                    <span class="chair">1 ряд 1 место</span>
-                </div>
-            </div>
-            <div class="ticket">
-                <img src="http://teator-sayt/images/banerPremier.png" alt="">
-                <div>
-                    <span>Театр. Музыка. Любовь.</span>
-                    <span>14 декабря, 19:30</span>
-                    <span class="chair">1 ряд 2 место</span>
-                </div>
-            </div> --}}
         </div>
     </div>
 @endsection

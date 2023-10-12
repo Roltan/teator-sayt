@@ -36,28 +36,19 @@ class Controller extends BaseController
     }
 
     public function signup(Request $request) {
-        $name = $request->input('name');
-        $password = $request->input('password');
-        $table = DB::table('signups')->get();
-        
-        foreach($table as $key){
-            if($key->id == 1){
-                if($key->login == $name){
-                    if($key->password == $password){
-                        return view('admin');
-                    }
-                }
-            }
-        }
-
         $request -> validate([
             'name' => ['min:5','required'],
             'password' => ['min:5', 'required'],
         ]);
         if(Auth::attempt($request->only('name','password'))){
-            $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
-            $news = DB::select('SELECT * FROM news ORDER BY time DESC');
-            return view('home', ['premiere' => $premiere, 'news' => $news]);
+            if(Auth::user()->name == 'admin'){
+                return view('admin');
+            }
+            else{
+                $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+                $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+                return view('home', ['premiere' => $premiere, 'news' => $news]);
+            }
         }
         else{
             $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
@@ -106,6 +97,11 @@ class Controller extends BaseController
     }
 
     public function LKab(){
+        if(!Auth::check()){
+            $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+            $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+            return view('home', ['premiere' => $premiere, 'news' => $news]);
+        }
         $name =  Auth::user()->name;
         $email = Auth::user()->email;
 
@@ -121,16 +117,47 @@ class Controller extends BaseController
     }
 
     public function Aafisha() {
+        if(!Auth::check()){
+            $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+            $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+            return view('home', ['premiere' => $premiere, 'news' => $news]);
+        }
+        if(Auth::user()->name != 'admin'){
+            $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+            $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+            return view('home', ['premiere' => $premiere, 'news' => $news]);
+        }
         $premiere = DB::select('SELECT * FROM premiere');
         return view('admin-Afisha', ['premiere' => $premiere]);
     }
 
     public function Anews() {
+        if(!Auth::check()){
+            $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+            $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+            return view('home', ['premiere' => $premiere, 'news' => $news]);
+        }
+        if(Auth::user()->name != 'admin'){
+            $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+            $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+            return view('home', ['premiere' => $premiere, 'news' => $news]);
+        }
         $news = DB::select('SELECT * FROM news');
         return view('admin-News', ['news' => $news]);
     }
 
     public function Aticket(){
+        if(!Auth::check()){
+            $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+            $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+            return view('home', ['premiere' => $premiere, 'news' => $news]);
+        }
+        if(Auth::user()->name != 'admin'){
+            $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+            $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+            return view('home', ['premiere' => $premiere, 'news' => $news]);
+        }
+
         $halls = DB::select('SELECT * FROM halls');
         $ID = 1;
         $count = 0;
@@ -163,6 +190,17 @@ class Controller extends BaseController
     }
 
     public function СhangeAfisha(Request $request){
+        if(!Auth::check()){
+            $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+            $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+            return view('home', ['premiere' => $premiere, 'news' => $news]);
+        }
+        if(Auth::user()->name != 'admin'){
+            $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+            $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+            return view('home', ['premiere' => $premiere, 'news' => $news]);
+        }
+
         $id = $request->input('id');
         switch(request('key')) {
             case 'add':
@@ -235,6 +273,17 @@ class Controller extends BaseController
     }
 
     public function СhangeNews(Request $request){
+        if(!Auth::check()){
+            $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+            $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+            return view('home', ['premiere' => $premiere, 'news' => $news]);
+        }
+        if(Auth::user()->name != 'admin'){
+            $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+            $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+            return view('home', ['premiere' => $premiere, 'news' => $news]);
+        }
+
         $id = $request->input('id');
         switch(request('key')) {
             case 'add':
@@ -272,6 +321,17 @@ class Controller extends BaseController
     }
 
     public function AddNews(Request $request){
+        if(!Auth::check()){
+            $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+            $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+            return view('home', ['premiere' => $premiere, 'news' => $news]);
+        }
+        if(Auth::user()->name != 'admin'){
+            $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+            $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+            return view('home', ['premiere' => $premiere, 'news' => $news]);
+        }
+
         $id = $request->input('id');
         $img = $request->input('img');
         $name = $request->input('name');
@@ -287,6 +347,17 @@ class Controller extends BaseController
     }
 
     public function AddAfisha(Request $request){
+        if(!Auth::check()){
+            $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+            $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+            return view('home', ['premiere' => $premiere, 'news' => $news]);
+        }
+        if(Auth::user()->name != 'admin'){
+            $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+            $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+            return view('home', ['premiere' => $premiere, 'news' => $news]);
+        }
+
         $id = $request->input('id');
         $img = $request->input('img');
         $time = $request->input('time');
@@ -325,6 +396,11 @@ class Controller extends BaseController
     }
 
     public function buyTicket(Request $request){
+        if(!Auth::check()){
+            $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
+            $news = DB::select('SELECT * FROM news ORDER BY time DESC');
+            return view('home', ['premiere' => $premiere, 'news' => $news]);
+        }
         $hallID = $request->input('hallID');
         $name = $request->input('name');
         $time = $request->input('time');

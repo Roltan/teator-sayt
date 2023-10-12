@@ -20,7 +20,7 @@
             <a href="/admin/ticket">Проданно билетов</a>
         </div>
         <div class="login">
-            <a href="/">Выйти</a>
+            <a href="/logout">Выйти</a>
         </div>
     </header>
 
