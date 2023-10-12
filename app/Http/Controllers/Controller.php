@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class Controller extends BaseController
 {
@@ -66,9 +68,9 @@ class Controller extends BaseController
 
     public function register(Request $request){
         $request -> validate([
-            'name' => ['min:5','required'],
+            'name' => ['min:5','required','unique:users'],
             'email' => ['min:5','required','email','unique:users'],
-            'password' => ['min:5','confirmed','required'],
+            'password' => ['min:5','confirmed','required','unique:users'],
             'check' => ['accepted','required'],
         ]);
 
@@ -77,23 +79,22 @@ class Controller extends BaseController
             'email' => $request->email,
             'password' => Hash::make($request->password)
         ]);
+
+        $bd = $request->input('name').'Us';
+        Schema::create($bd, function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('nameMer');
+            $table->string('time');
+            $table->string('baner');
+            $table->string('row');
+            $table->string('column');
+        });
+
         Auth::login($user);
         $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
         $news = DB::select('SELECT * FROM news ORDER BY time DESC');
-        return view('home');
-
-
-        
-        // $login = $request -> input('login');
-        // $email = $request -> input('email');
-        // $password = $request -> input('password');
-        // $buf = DB::select('SELECT id FROM signups ORDER BY id');
-        // foreach ($buf as $i){
-        //     $id = $i -> id + 1;
-        //     break;
-        // }
-        // DB::select("INSERT INTO `signups`(`id`, `login`, `email`, `password`) VALUES ('$id','$login','$email','$password')");
-        // DB::select("CREATE TABLE ")
+        return view('home', ['premiere' => $premiere, 'news' => $news]);
     }
 
     public function logout(){
@@ -105,7 +106,18 @@ class Controller extends BaseController
     }
 
     public function LKab(){
-        return view('LKab');
+        $name =  Auth::user()->name;
+        $email = Auth::user()->email;
+
+        $bd = Auth::user()->name.'Us';
+        if(DB::table($bd)->where('id',1)->exists()){
+            $user = DB::select("SELECT * FROM $bd");
+        }
+        else{
+            $user = 'empty';
+        }
+
+        return view('LKab',['name'=>$name, 'email'=>$email, 'user'=>$user]);
     }
 
     public function Aafisha() {
@@ -314,6 +326,9 @@ class Controller extends BaseController
 
     public function buyTicket(Request $request){
         $hallID = $request->input('hallID');
+        $name = $request->input('name');
+        $time = $request->input('time');
+        $baner = $request->input('baner');
         $row = $request->input("row");
         $col = $request->input("column");
         
@@ -334,6 +349,23 @@ class Controller extends BaseController
                 DB::select("UPDATE `halls` SET `row5`='engaged' WHERE `hallID`='$hallID' AND `column`='$col'");
             break;
         }
+
+        $user = Auth::user()->name;
+        $bd = $user.'Us';
+        $id = 0;
+        do{
+            $id++;
+        }
+        while(DB::table($bd)->where('id',$id)->exists());
+        DB::select("INSERT INTO `$bd` (`id`, `name`, `nameMer`, `time`, `baner`, `row`, `column`) VALUES (
+            '$id',
+            '$user',
+            '$name',
+            '$time',
+            '$baner',
+            '$row',
+            '$col'
+        )");
 
         $premiere = DB::select('SELECT * FROM premiere ORDER BY time DESC');
         $halls = DB::select("SELECT * FROM halls");

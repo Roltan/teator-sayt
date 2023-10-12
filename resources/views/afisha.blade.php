@@ -166,6 +166,9 @@
                                 <form action="/buyTicket" method="POST">
                                     @csrf
                                     <input type="text" style="display: none" name="hallID" value="{{$item->id}}">
+                                    <input type="text" style="display: none" name="name" value="{{$item->name}}">
+                                    <input type="text" style="display: none" name="time" value="{{$item->time}}">
+                                    <input type="text" style="display: none" name="baner" value="{{$item->baner}}">
                                     <input type="text" style="display: none" class="payOutRow" name="row">
                                     <input type="text" style="display: none" class="payOutColumn" name="column">
                                     <button type="submit" class="btn-primary">Оплатить билет</button>

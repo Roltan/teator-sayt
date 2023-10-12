@@ -17,20 +17,38 @@
                 @csrf
                 <div class="mb-3">
                     <label class="form-label">Логин</label>
-                    <input type="text" name="name" class="form-control">
+                    <input type="text" name="name" class="form-control" value="{{$name}}" disabled>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Почта</label>
-                    <input type="email" name="email" class="form-control">
+                    <input type="email" name="email" class="form-control" value="{{$email}}" disabled>
                 </div>
             </form>
         </div>
 
         <div class="tickets">
-            <div class="none-ticket">
+            @if ($user == "empty")
+                <div class="none-ticket">
+                    <span>Вы ещё не покупали билеты</span>
+                    <a href="/afisha" class="btn-primary">выбрать предстовлеие</a>
+                </div>
+            @else
+                @foreach ($user as $item)
+                    <div class="ticket">
+                        <img src="{{$item->baner}}" alt="">
+                        <div>
+                            <span>{{$item->nameMer}}</span>
+                            <span>{{$item->time}}</span>
+                            <span class="chair">{{$item->row}} ряд {{$item->column}} место</span>
+                        </div>
+                    </div> 
+                @endforeach
+            @endif
+            
+            {{-- <div class="none-ticket">
                 <span>Вы ещё не покупали билеты</span>
                 <a href="/afisha" class="btn-primary">выбрать предстовлеие</a>
-            </div>
+            </div> --}}
             {{-- <div class="ticket">
                 <img src="http://teator-sayt/images/banerPremier.png" alt="">
                 <div>
