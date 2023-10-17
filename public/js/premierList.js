@@ -40,6 +40,37 @@ function PremierList2(obj){
     disablePr(i);
     But.classList.add("im-in");
     TextList.style.display = 'block';
+
+    var idC = 'colectiv2'+i;
+    var colektiv = document.getElementById(idC)
+    var colList = String(colektiv.textContent)
+    colektiv.textContent = '';
+
+    var spase = 0;
+    var chel  = '';
+
+    for(let k=0; k<colList.length; k++){
+        // console.log(colList[k]);
+        if(colList[k] == " " && spase == 1){
+            colektiv.innerHTML += "<li>" + chel + "</li>";
+            chel = '';
+            spase = 0;
+        }
+        if(colList[k] == " " && spase == 0 && chel != ''){
+            chel += colList[k];
+            spase++;
+        }
+        if(colList[k]=="-"){
+            colektiv.innerHTML += "<li>---</li>";
+            chel += "- ";
+            spase = 0;
+            k++;
+        }
+        if(colList[k] != " "){
+            chel += colList[k];
+            console.log(chel);
+        }
+    }
 }
 
 function buyTicket(obj, k){
@@ -91,3 +122,8 @@ function picChair(obj){
         }
     }
 }
+
+
+
+
+

@@ -96,9 +96,10 @@
 .infoPremier .modal-text-2{
     margin: 30px 50px;
 }
-.infoPremier .modal-text-2 span{
+.infoPremier .modal-text-2 ul{
     display: block;
-    width: 150px;
+    /* width: 150px; */
+    list-style: none;
 
     color: #282828;
     font-family: Rubik;

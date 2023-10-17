@@ -71,9 +71,11 @@
                                             {{$item -> text}}
                                         </div>
                                         <div class="modal-text-2" style="display: none" id="premierText2{{$item -> id}}">
-                                            <span>
+                                            <ul id="colectiv2{{$item -> id}}">
                                                 {{$item -> coleckiv}}
-                                            </span>
+                                                {{-- <li>yawdgavwdg ajwdvyadvy</li>
+                                                <li>yawdgavwdg ajwdvyadvy</li>  --}}
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="buyPremier" id="buyPremier{{$item -> id}}">
