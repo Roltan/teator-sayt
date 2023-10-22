@@ -71,7 +71,7 @@
                                             {{$item -> text}}
                                         </div>
                                         <div class="modal-text-2" style="display: none" id="premierText2{{$item -> id}}">
-                                            <ul id="colectiv2{{$item -> id}}">
+                                            <ul id="colectiv2{{$item -> id}}" class="colList">
                                                 {{$item -> coleckiv}}
                                                 {{-- <li>yawdgavwdg ajwdvyadvy</li>
                                                 <li>yawdgavwdg ajwdvyadvy</li>  --}}

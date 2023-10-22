@@ -100,7 +100,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Коллектив:</label>
-                    <textarea class="form-control" name="coleckiv"></textarea>
+                    <textarea class="form-control" name="colecktiv"></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Ограничение:</label>
